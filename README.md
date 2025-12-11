@@ -19,3 +19,21 @@ MindCompass provides:
 🔗 Trusted “resources-only” mental-health navigation
 
 🛡️ Crisis detection & safety guardrails (no therapy, diagnosis, or medical advice)
+
+----
+### 🧩 Multi-Agent Architecture
+
+MindCompass uses a structured orchestration:
+
+```mermaid
+flowchart TD
+    U[User] --> SA[Safety Agent]
+    SA --> EA[Emotion Agent]
+    EA --> MC[Micro-Coach]
+    MC --> RN[Resource Navigator]
+    RN --> PG[Plan Generator]
+    PG --> R[Final Response]
+
+```
+
+
