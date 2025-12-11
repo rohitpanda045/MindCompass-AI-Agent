@@ -26,13 +26,28 @@ MindCompass provides:
 MindCompass uses a structured orchestration:
 
 ```mermaid
-flowchart TD
-    U[User] --> SA[Safety Agent]
-    SA --> EA[Emotion Agent]
-    EA --> MC[Micro-Coach]
-    MC --> RN[Resource Navigator]
-    RN --> PG[Plan Generator]
-    PG --> R[Final Response]
+sequenceDiagram
+    participant U as User
+    participant SA as Safety Agent
+    participant EA as Emotion Agent
+    participant MC as Micro-Coach
+    participant RN as Resource Navigator
+    participant PG as Plan Generator
+    participant R as Final Response
+
+    U->>SA: Sends Query
+    SA->>SA: Validate & Sanitize Input
+    SA->>EA: Forward Cleaned Input
+    EA->>EA: Emotion Interpretation
+    EA->>MC: Send Context + Emotion
+    MC->>MC: Clarify & Micro-Coach
+    MC->>RN: Forward Refined Intent
+    RN->>RN: Resource Mapping
+    RN->>PG: Send Resource Insights
+    PG->>PG: Create Structured Plan
+    PG->>R: Generate Final Output
+    R->>U: Return Response
+
 
 ```
 
