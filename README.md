@@ -23,7 +23,34 @@ MindCompass provides:
 ----
 ### 🧩 Multi-Agent Architecture
 
-MindCompass uses a structured orchestration:
+MindCompass Multi-Agent Orchestration — System Description
+
+MindCompass follows a structured, safety-first multi-agent workflow that processes user messages in a controlled, ethical, and highly modular pipeline. Each agent is responsible for a distinct cognitive task, enabling the system to remain predictable, explainable, safe, and non-diagnostic.
+
+The overall interaction begins with a user query and flows through a series of lightweight agents:
+
+### 🔹 MindCompass Multi-Agent Workflow (Short Summary)
+
+- **Safety Agent**  
+  Screens user messages for crisis or self-harm signals and redirects to emergency help if needed.
+
+- **Emotion Agent**  
+  Extracts emotional cues (stress, overwhelm, sadness, focus issues) without performing any diagnosis.
+
+- **Micro-Coach Agent**  
+  Provides safe, practical 1–2 minute micro-actions (breathing, grounding, reflection prompts).
+
+- **Resource Navigator**  
+  Maps user needs to trusted, pre-verified well-being resources.
+
+- **Plan Generator**  
+  Creates an optional personalized 7-day micro-well-being plan.
+
+- **Orchestrator**  
+  Coordinates all agents and produces the final, clean, supportive response.
+
+
+The diagram below illustrates the complete, step-by-step orchestration that powers MindCompass.
 
 ```mermaid
 sequenceDiagram
@@ -51,4 +78,9 @@ sequenceDiagram
 
 ```
 
+-----
+🔐 1. Safety Agent
+
+Detects crisis signals (self-harm, suicidal language, severe distress).
+If triggered → bypass all agents → deliver crisis hotlines & immediate help info.
 
